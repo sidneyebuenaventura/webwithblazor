@@ -1,0 +1,23 @@
+{
+  "name": "digital-hub-ui",
+  "version": "1.0.0",
+  "description": "SAC Digital Hub UI",
+  "scripts": {
+    "start": "run-s build watch",
+    "build": "run-s scss copy:favicon",
+    "scss": "sass --style=expanded scss/project.scss ../wwwroot/css/project.css && sass --style=compressed scss/project.scss ../wwwroot/css/project.min.css",
+    "watch": "onchange \"scss/**/*.scss\" -- npm run scss",
+    "copy:favicon": "copyfiles favicon.ico ../wwwroot",
+    "audit": "yarn audit"
+  },
+  "author": "Sitefinity",
+  "devDependencies": {
+    "copyfiles": "2.4.1",
+    "npm-run-all": "4.1.5",
+    "onchange": "7.1.0",
+    "sass": "1.50.0"
+  },
+  "dependencies": {
+    "bootstrap": "5.2.0-beta1"
+  }
+}

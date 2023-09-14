@@ -1,0 +1,118 @@
+//Bootstrap styles overridden following an example and recommendation from Sitefinity
+//https://github.com/Sitefinity/sitefinity-aspnetcore-mvc-samples/tree/master/src/bootstrap-overides
+
+$color-dark-gray: #2C3039;
+$color-white: #FFFFFF;
+$color-cedar-chest: #7382CE;
+$color-articles-background: #F4F5FA;
+$color-knowledge-hub-background: #F5FAF9;
+$color-knowledge-hub-green: #3FA291;
+$color-green: #79B59B;
+$color-red: #D06767;
+$color-yellow: #DCD276;
+$color-blue: #73B8CE;
+$font-size-base: 1rem;
+
+
+// Load the whole Bootstrap stylesheet
+@use "../node_modules/bootstrap/scss/bootstrap.scss" with (
+    $grid-breakpoints: (
+        xs: 0,
+        sm: 371px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px
+    ),
+    
+    // https://getbootstrap.com/docs/5.0/content/reboot/#page-defaults
+    $font-family-base: "Inter",
+    
+    // https://getbootstrap.com/docs/5.0/customize/sass/#modify-map
+    $primary: $color-cedar-chest,
+    $secondary: $color-knowledge-hub-green,
+    $success: $color-green,
+    $info: $color-blue,
+    $warning: $color-yellow,
+    $danger: $color-red,
+    $light: $color-white,
+    $dark: $color-dark-gray,
+    
+    // https://getbootstrap.com/docs/5.0/utilities/text/#font-size
+    $h1-font-size: 3.75 * $font-size-base,
+    $h2-font-size: 3.125 * $font-size-base,
+    $h3-font-size: 2.5 * $font-size-base  ,
+    $h4-font-size: 1.875 * $font-size-base,
+    $h5-font-size: 1.25 * $font-size-base,
+    $h6-font-size: 1.25 * $font-size-base,
+    $headings-font-weight: 700,
+    $btn-font-weight: 600,
+    $btn-font-size: 0.875 * $font-size-base,
+    $btn-line-height: 150%
+);
+
+// Sitefinity stylesheet
+@use "sitefinity/sitefinity";
+
+h6, .h6 {
+  font-weight: 400 !important;
+  line-height: 1.75 * $font-size-base !important;
+}
+
+p, .p {
+  font-size: $font-size-base !important;
+  font-weight: 400 !important;
+  line-height: 1.5 * $font-size-base !important;
+}
+
+small {
+  font-size: 0.75 * $font-size-base !important;
+  font-weight: 400 !important;
+  line-height: 1.25 * $font-size-base !important;
+}
+
+.label-1 {
+  font-size: 0.875 * $font-size-base !important;
+  font-weight: 700 !important;
+  text-decoration: none;
+}
+
+.label-2 {
+  font-size: 0.75 * $font-size-base !important;
+  font-weight: 700 !important;
+  text-decoration: none;
+}
+
+.btn-primary, .btn-secondary, .btn-success, .btn-info, .btn-warning, .btn-danger, .btn-dark {
+  color: $color-white !important;
+}
+
+.btn-light {
+  color: $color-dark-gray !important;
+}
+
+
+/* Home Screen Boostrap styles overrides */
+
+body.body--home {
+  .bg-light {
+    background-color: transparent !important;
+  }
+}
+
+/* Articles Boostrap styles overrides */
+
+body.body--articles {
+    .bg-light {
+        background-color: $color-articles-background !important;
+    }
+}
+
+/* Learning Hub Boostrap styles overrides */
+
+body.body--learning-hub {
+    .bg-light {
+        background-color: $color-knowledge-hub-background !important;
+    }
+
+}
